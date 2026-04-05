@@ -1,0 +1,7 @@
+{
+  "name": "Spark Light - 24/7 Service",
+  "description": "Premium emergency home services booking platform for Kannur, featuring real-time updates and secure payments.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
