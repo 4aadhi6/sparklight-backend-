@@ -190,7 +190,9 @@ async function startServer() {
   app.use(express.json());
 
   // MongoDB URI
-  const MONGODB_URI = "mongodb://127.0.0.1:27017/sparklight";
+  const MONGODB_URI =
+    process.env.MONGODB_URI ||
+    "mongodb+srv://firepass77432_db_user:PLm70Z7dbriRVOY2@cluster0.wf1odyd.mongodb.net/sparklight";
 
   mongoose.set("bufferCommands", false);
 
