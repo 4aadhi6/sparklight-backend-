@@ -267,7 +267,9 @@ async function startServer() {
   app.use("/api/workers", workerRoutes);
   app.use("/api/admin", adminRoutes);
   app.use("/api/payments", paymentRoutes);
-
+app.get("/",(req,res)=>{
+  res.send("server working fine")
+})
   // Health check
   app.get("/api/health", (req, res) => {
     res.json({
@@ -277,13 +279,13 @@ async function startServer() {
   });
 
   // Serve frontend (optional)
-  const distPath = path.join(process.cwd(), "dist");
+  // const distPath = path.join(process.cwd(), "dist");
 
-  app.use(express.static(distPath));
+  // app.use(express.static(distPath));
 
-  app.get("*", (req, res) => {
-    res.sendFile(path.join(distPath, "index.html"));
-  });
+  // app.get("*", (req, res) => {
+  //   res.sendFile(path.join(distPath, "index.html"));
+  // });
 
   // Start server
   server.listen(PORT, "0.0.0.0", () => {
